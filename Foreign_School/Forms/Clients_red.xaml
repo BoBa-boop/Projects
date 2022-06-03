@@ -1,0 +1,61 @@
+﻿<Page x:Class="Foreign_School.Forms.Clients_red" 
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Foreign_School.Forms"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="829"
+      Title="Clients_red" Loaded="Window_Loaded">
+
+    <Grid Background="White">
+        <Grid Margin="519,20,17,10">
+            <Border Background="#e7fabf" BorderBrush="#e7fabf" BorderThickness="2" CornerRadius="8,8,8,8" Margin="5,0,0,0"/>
+        </Grid>
+        <Line Stroke="red" X1="630" X2="771" Y1="46" Y2="46"/>
+        <Line Stroke="red"  X1="630" X2="771" Y1="76" Y2="76"/>
+        <Line Stroke="red"  X1="630" X2="771" Y1="106" Y2="106"/>
+        <Line Stroke="red"  X1="630" X2="771" Y1="139" Y2="139"/>
+        <Line Stroke="Red" X1="630" X2="771" Y1="169" Y2="169"/>
+        <Line Stroke="Red" X1="630" X2="771" Y1="199" Y2="199"/>
+        <Button x:Name="btnAdd" FontFamily="Comic Sans MS" Content="Добавить" Margin="541,346,191,79" Click="btnAdd_Click"/>
+        <Button x:Name="btnOut" FontFamily="Comic Sans MS" Content="Заполнить поля" Margin="642,385,81,40" Click="btnOut_Click" />
+        <Button x:Name="btnRed" FontFamily="Comic Sans MS" Content="Редактировать" Margin="541,385,191,40" Click="btnRed_Click" ToolTip="Выберите данные из таблицы"/>
+        <Button x:Name="btnDel" FontFamily="Comic Sans MS" Content="Удалить" Margin="642,346,81,79" Click="btnDel_Click"/>
+        <Button x:Name="WindowExit" Margin="811,0,0,425" Style="{DynamicResource btnExit}" Click="WindowExit_Click"/>
+        <Button x:Name="btnBack" Style="{DynamicResource btnBack}" Margin="753,410,10,10" BorderThickness="0" Click="btnBack_Click"/>
+        <Button x:Name="btnDr" FontFamily="Comic Sans MS" Content="Именниники" Margin="541,416,81,10" Click="btnDr_Click"/>
+
+        <Label Content="Имя" Margin="525,21,262,404" Style="{DynamicResource lblStyle}"/>
+        <Label Content="Фамилия" Margin="525,53,237,372" Style="{DynamicResource lblStyle}"/>
+        <Label Content="Отчество" Margin="525,83,237,342" Style="{DynamicResource lblStyle}"/>
+        <Label Content="Дата рождения" Margin="525,113,205,312" Style="{DynamicResource lblStyle}"/>
+        <Label Content="Телефон" Margin="525,143,237,282" Style="{DynamicResource lblStyle}"/>
+        <Label Content="Email" Margin="525,173,262,252" Style="{DynamicResource lblStyle}"/>
+        <Label Content="Пол" Margin="525,208,262,217" Style="{DynamicResource lblStyle}"/>
+        <Label Content="Мужской" Margin="612,206,152,219" Style="{DynamicResource lblStyle}"/>
+        <Label Content="Женский" Margin="743,206,22,219" Style="{DynamicResource lblStyle}"/>
+        <TextBox x:Name="txtName" FontFamily="Comic Sans MS" Margin="629,20,56,405" Style="{DynamicResource txtBox}" PreviewTextInput="txtFIO_PreviewTextInput" MaxLength="50"/>
+        <TextBox x:Name="txtLastName" FontFamily="Comic Sans MS" Margin="629,50,56,375" Style="{DynamicResource txtBox}" PreviewTextInput="txtFIO_PreviewTextInput" MaxLength="50"/>
+        <TextBox x:Name="txtOtch" FontFamily="Comic Sans MS" Margin="629,80,56,345" Style="{DynamicResource txtBox}" PreviewTextInput="txtFIO_PreviewTextInput" MaxLength="50"/>
+        <TextBox x:Name="txtBirth" FontFamily="Comic Sans MS" Margin="631,113,54,312"  Style="{DynamicResource txtBox}" PreviewTextInput="txtBirth_PreviewTextInput"/>
+        <DatePicker x:Name="date" Margin="779,113,17,312" MouseLeave="date_MouseLeave"/>
+        <TextBox x:Name="txtPh" FontFamily="Comic Sans MS" Margin="629,143,56,282" PreviewTextInput="txtPh_PreviewTextInput" Style="{DynamicResource txtBox}"/>
+        <TextBox x:Name="txtEmail" FontFamily="Comic Sans MS" Margin="631,173,54,252" Style="{DynamicResource txtBox}" />
+        <ToggleButton x:Name="tg_s" Margin="681,208,90,216" BorderThickness="0" Style="{StaticResource tb_sw}"/>
+        <DataGrid x:Name="dgClients" AutoGenerateColumns="False" Margin="79,10,310,10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" FontFamily="Comic Sans MS" Binding="{Binding Path=Id}"/>
+                <DataGridTextColumn Header="Имя" FontFamily="Comic Sans MS" Binding="{Binding Path=Name}"/>
+                <DataGridTextColumn Header="Фамилия" FontFamily="Comic Sans MS" Binding="{Binding Path=LastName}"/>
+                <DataGridTextColumn Header="Отчество" FontFamily="Comic Sans MS" Binding="{Binding Path=Otchestvo}"/>
+                <DataGridTextColumn Header="Дата рождения" FontFamily="Comic Sans MS" Binding="{Binding Path=Birthday, StringFormat=dd.MM.yyyy}"/>
+                <DataGridTextColumn Header="Дата регистрации" FontFamily="Comic Sans MS" Binding="{Binding Path=Registrate, StringFormat=dd.MM.yyyy}"/>
+                <DataGridTextColumn Header="Телефон" FontFamily="Comic Sans MS" Binding="{Binding Path=Phone}"/>
+                <DataGridTextColumn Header="Email" FontFamily="Comic Sans MS" Binding="{Binding Path=Email}"/>
+                <DataGridTextColumn Header="Пол" FontFamily="Comic Sans MS" Binding="{Binding Path=Sex}"/>
+                <!--<DataGridTextColumn Header="Фото"/>-->
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>
